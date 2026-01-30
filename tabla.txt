@@ -1,0 +1,17 @@
+CREATE TABLE `programs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `icon` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `programs`
+--
+
+INSERT INTO `programs` (`id`, `title`, `icon`, `created_at`, `updated_at`) VALUES
+(1, 'Education Support', 'icons/DHFrtn3iGvSZnZDBywwipRCgRtMI6eXYXamL9sEe.png', '2026-01-29 10:18:36', '2026-01-29 10:42:32'),
+(2, 'Healthcare initiatives', 'icons/hKKANuN1WpXCEsefEYNCX3yX5Gv3kD6E78r8F0y8.png', '2026-01-29 10:27:22', '2026-01-29 10:43:06'),
+(3, 'Livelihood Programs', 'icons/nOJaKay5T9fwxF2yiijVIHkIZZPzLZNA9zMCIj6C.png', '2026-01-29 10:40:36', '2026-01-29 10:48:36'),
+(4, 'Access to Water', 'icons/xL59rNEWSr613EN1U1AhbLWy9F5FvEgWzDWdeuSr.png', '2026-01-29 10:41:56', '2026-01-29 10:52:03');
