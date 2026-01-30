@@ -34,6 +34,13 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('servicios.index') }}" class="waves-effect">
+                        <i class="bx bx-briefcase-alt-2"></i>
+                        <span key="t-services">Servicios</span>
+                    </a>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

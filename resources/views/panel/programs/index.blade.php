@@ -44,7 +44,8 @@
 
                         <div class="mb-3">
                             <label class="form-label">Título del Programa</label>
-                            <input type="text" id="title" name="title" class="form-control" required placeholder="Ej: Education Support">
+                            <input type="text" id="title" name="title" class="form-control" required
+                                placeholder="Ej: Education Support">
                         </div>
 
                         <div class="mb-3">
@@ -53,7 +54,7 @@
 
                             <div class="mt-3 text-center">
                                 <img id="icon_preview" src="" class="rounded img-thumbnail"
-                                     style="max-height: 100px; display: none; background-color: #f8f9fa;">
+                                    style="max-height: 100px; display: none; background-color: #f8f9fa;">
                                 <p id="text_preview_icon" class="text-muted small mt-1" style="display: none;"></p>
                             </div>
                         </div>
@@ -75,26 +76,28 @@
             // 1. Inicializar DataTable (Sin columna de acciones)
             let table = $('#table-programs').DataTable({
                 ajax: "{{ route('programs.index') }}",
-               columns: [
-    { data: 'id' },
-    {
-        data: 'icon',
-        render: function(data) {
-            let url = data ? `/storage/${data}` : '/admin/assets/images/no-image.png';
-            return `<img src="${url}" class="rounded" style="height: 40px; width: 40px; object-fit: contain; background: #eee; padding: 5px;">`;
-        }
-    },
-    {
-        data: 'title',
-        render: function(data, type, row) {
-            // Mantenemos el clic en el título como opción secundaria
-            return `<a href="javascript:void(0);" onclick="editProgram(${row.id})" class="fw-bold text-dark">${data}</a>`;
-        }
-    },
-    {
-        data: null, // Columna de Acciones
-        render: function(data) {
-            return `
+                columns: [{
+                        data: 'id'
+                    },
+                    {
+                        data: 'icon',
+                        render: function(data) {
+                            let url = data ? `/storage/${data}` :
+                                '/admin/assets/images/no-image.png';
+                            return `<img src="${url}" class="rounded" style="height: 40px; width: 40px; object-fit: contain; background: #eee; padding: 5px;">`;
+                        }
+                    },
+                    {
+                        data: 'title',
+                        render: function(data, type, row) {
+                            // Mantenemos el clic en el título como opción secundaria
+                            return `<a href="javascript:void(0);" onclick="editProgram(${row.id})" class="fw-bold text-dark">${data}</a>`;
+                        }
+                    },
+                    {
+                        data: null, // Columna de Acciones
+                        render: function(data) {
+                            return `
                 <div class="text-center">
                     <a href="javascript:void(0);" onclick="editProgram(${data.id})" class="text-primary me-3" title="Editar">
                         <i class="bx bx-pencil font-size-18"></i>
@@ -104,10 +107,12 @@
                     </a>
                 </div>
             `;
-        }
-    }
-],
-                language: { url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json" }
+                        }
+                    }
+                ],
+                language: {
+                    url: "//cdn.datatables.net/plug-ins/1.13.4/i18n/es-ES.json"
+                }
             });
 
             // 2. Previsualización de Icono
@@ -166,33 +171,34 @@
         });
 
         /// 5. Función Editar (Se activa al clickear el título)
-function editProgram(id) {
-    $.get(`/panel/programs/${id}/edit`, function(data) {
-        $('#program_id').val(data.id);
-        $('#title').val(data.title);
+        function editProgram(id) {
+            $.get(`/panel/programs/${id}/edit`, function(data) {
+                $('#program_id').val(data.id);
+                $('#title').val(data.title);
 
-        if (data.icon) {
-            // CAMBIO AQUÍ: Añadimos /storage/ para que la imagen no salga rota
-            $('#icon_preview').attr('src', `/storage/${data.icon}`).show();
-            $('#text_preview_icon').text('Icono actual').show();
-        } else {
-            $('#icon_preview, #text_preview_icon').hide();
+                if (data.icon) {
+                    // CAMBIO AQUÍ: Añadimos /storage/ para que la imagen no salga rota
+                    $('#icon_preview').attr('src', `/storage/${data.icon}`).show();
+                    $('#text_preview_icon').text('Icono actual').show();
+                } else {
+                    $('#icon_preview, #text_preview_icon').hide();
+                }
+
+                $('#modalTitle').text('Editar: ' + data.title);
+
+                // Lógica del botón eliminar dentro del modal
+                if (!$('#btnEliminarModal').length) {
+                    $('.modal-footer').prepend(
+                        '<button type="button" id="btnEliminarModal" class="btn btn-danger">Eliminar</button>');
+                }
+
+                $('#btnEliminarModal').show().off('click').on('click', function() {
+                    deleteProgram(data.id);
+                });
+
+                $('#programModal').modal('show');
+            });
         }
-
-        $('#modalTitle').text('Editar: ' + data.title);
-
-        // Lógica del botón eliminar dentro del modal
-        if(!$('#btnEliminarModal').length){
-            $('.modal-footer').prepend('<button type="button" id="btnEliminarModal" class="btn btn-danger">Eliminar</button>');
-        }
-
-        $('#btnEliminarModal').show().off('click').on('click', function() {
-            deleteProgram(data.id);
-        });
-
-        $('#programModal').modal('show');
-    });
-}
         // 6. Función Eliminar
         function deleteProgram(id) {
             Swal.fire({
@@ -208,7 +214,9 @@ function editProgram(id) {
                     $.ajax({
                         url: `/panel/programs/${id}/destroy`,
                         method: "DELETE",
-                        data: { "_token": "{{ csrf_token() }}" },
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
                         success: function(res) {
                             $('#programModal').modal('hide');
                             $('#table-programs').DataTable().ajax.reload();

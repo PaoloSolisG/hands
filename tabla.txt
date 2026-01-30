@@ -15,3 +15,19 @@ INSERT INTO `programs` (`id`, `title`, `icon`, `created_at`, `updated_at`) VALUE
 (2, 'Healthcare initiatives', 'icons/hKKANuN1WpXCEsefEYNCX3yX5Gv3kD6E78r8F0y8.png', '2026-01-29 10:27:22', '2026-01-29 10:43:06'),
 (3, 'Livelihood Programs', 'icons/nOJaKay5T9fwxF2yiijVIHkIZZPzLZNA9zMCIj6C.png', '2026-01-29 10:40:36', '2026-01-29 10:48:36'),
 (4, 'Access to Water', 'icons/xL59rNEWSr613EN1U1AhbLWy9F5FvEgWzDWdeuSr.png', '2026-01-29 10:41:56', '2026-01-29 10:52:03');
+
+
+--------------------------------------------------------------
+SERVICIOS
+--------------------------------------------------------------
+
+INSERT INTO `servicios` VALUES (1, 'Fund Raised & Donation', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/whsa5803gzFLKcwkH6D8E4qbqyOoNIPVVV97Gr9x.jpg', '2026-01-30 04:07:19', '2026-01-30 04:07:19');
+INSERT INTO `servicios` VALUES (2, 'Medical Treatment Help', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/NtugW3ycOkE18bCL3RjvA67dQbbAzeVlMMcSmTYm.jpg', '2026-01-30 04:08:13', '2026-01-30 04:08:13');
+INSERT INTO `servicios` VALUES (3, 'Child Medical Research', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/vCgRcbtmzQmEliQq4bYirAFc6Bb1X22LJhRFyMxy.jpg', '2026-01-30 04:08:26', '2026-01-30 04:08:26');
+INSERT INTO `servicios` VALUES (4, 'Development Programs', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/J4wii7txNygIg6E7ThnazjtJ4qgIL790fqHomJMJ.jpg', '2026-01-30 04:08:40', '2026-01-30 04:08:40');
+INSERT INTO `servicios` VALUES (5, 'Fund Raised & Donation', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/BnmHx2GhvoxmPOCd3KASQfbMo7xZEKVl6ikMgD51.jpg', '2026-01-30 04:08:59', '2026-01-30 04:08:59');
+INSERT INTO `servicios` VALUES (6, 'Medical Treatment Help', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/tNLmjhOsLiKFfmq5h2bv6dOUkqmTsBen47CGcVpW.jpg', '2026-01-30 04:09:14', '2026-01-30 04:09:14');
+INSERT INTO `servicios` VALUES (7, 'Child Medical Research', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/g82NdrocWk3aCPAd79SeGyzJmWJxv1ZvTlSyuF7c.jpg', '2026-01-30 04:09:32', '2026-01-30 04:09:32');
+INSERT INTO `servicios` VALUES (8, 'Development Programs', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/9fNmG3ZeDAN86v49XkUvAMiOb5HM2tInf0IJLlg1.jpg', '2026-01-30 04:09:46', '2026-01-30 04:09:46');
+--------------------------------------------------------------
+--------------------------------------------------------------

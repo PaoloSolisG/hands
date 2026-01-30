@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Panel\BannerController;
 use App\Http\Controllers\Panel\DashboardController;
+use App\Http\Controllers\Panel\ServicioController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,13 @@ Route::group(['prefix' => 'panel'], function () {
         Route::get('/programs/{id}/edit', 'edit')->name('programs.edit');   // Form editar
         Route::put('/programs/{id}/update', 'update')->name('programs.update'); // Actualizar (¡No olvides esta!)
         Route::delete('/programs/{id}/destroy', 'destroy')->name('programs.destroy'); // Eliminar
+    });
+
+
+    Route::controller(ServicioController::class)->group(function () {
+        Route::get('/servicios', 'index')->name('servicios.index');
+        Route::post('/servicios/store', 'store')->name('servicios.store');
+        Route::get('/servicios/{id}/edit', 'edit')->name('servicios.edit');
+        Route::delete('/servicios/{id}/destroy', 'destroy')->name('servicios.destroy');
     });
 });

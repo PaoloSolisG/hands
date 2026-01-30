@@ -422,140 +422,34 @@
                 <div class="ul-services-slider swiper overflow-visible">
                     <div class="swiper-wrapper">
                         <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-1.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Fund Raised &
-                                            Donation</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
+                     @foreach($servicios as $servicio)
+            <div class="swiper-slide">
+                <div class="ul-service">
+                    <div class="ul-service-img">
+                        @if($servicio->imagen)
+                            {{-- Usamos storage para traer la imagen dinámica --}}
+                            <img src="{{ asset('storage/' . $servicio->imagen) }}" alt="{{ $servicio->titulo }}">
+                        @else
+                            {{-- Imagen por defecto por si no subes una --}}
+                            <img src="{{ asset('assets/img/service-1.jpg') }}" alt="Default Image">
+                        @endif
+                    </div>
+                    <div class="ul-service-txt">
+                        <h3 class="ul-service-title">
+                            <a href="#">{{ $servicio->titulo }}</a>
+                        </h3>
+                        <p class="ul-service-descr">
+                            {{ $servicio->descripcion }}
+                        </p>
+                        <a href="#" class="ul-service-btn">
+                            <i class="flaticon-up-right-arrow"></i> Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endforeach
 
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-2.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Medical Treatment
-                                            Help</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-3.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Child Medical
-                                            Research</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-4.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Development
-                                            Programs</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-1.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Fund Raised &
-                                            Donation</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-2.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Medical Treatment
-                                            Help</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-3.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Child Medical
-                                            Research</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single slide -->
-                        <div class="swiper-slide">
-                            <div class="ul-service">
-                                <div class="ul-service-img">
-                                    <img src="assets/img/service-4.jpg" alt="Service Image">
-                                </div>
-                                <div class="ul-service-txt">
-                                    <h3 class="ul-service-title"><a href="service-details.html">Development
-                                            Programs</a></h3>
-                                    <p class="ul-service-descr">Professional Detailed Residential Cleaning, Ensuring
-                                        Spotless Homes And Healthy Living Spaces.</p>
-                                    <a href="service-details.html" class="ul-service-btn"><i
-                                            class="flaticon-up-right-arrow"></i> View Details</a>
-                                </div>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
