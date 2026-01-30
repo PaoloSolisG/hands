@@ -40,6 +40,14 @@
                         <span key="t-services">Servicios</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('about.index') }}" class="waves-effect">
+                        <i class="bx bx-grid-alt"></i>
+                        <span key="t-programs">
+                            About
+                        </span>
+                    </a>
+                </li>
 
             </ul>
         </div>

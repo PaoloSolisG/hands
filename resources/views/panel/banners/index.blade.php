@@ -23,9 +23,7 @@
                         <th>Imagen</th>
                         <th>Título</th>
                         <th>Texto</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
+                        <th>Acciones</th>p
                 <tbody></tbody>
             </table>
         </div>

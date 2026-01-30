@@ -346,62 +346,74 @@
         <!-- VOLUNTEER SECTION END -->
 
 
-        <!-- ABOUT SECTION START -->
-        <section class="ul-about ul-about-2 ul-section-spacing wow animate__fadeInUp">
-            <div class="ul-container">
-                <div class="row row-cols-md-2 row-cols-1 align-items-center gy-4 ul-about-row">
-                    <div class="col">
-                        <div class="ul-about-imgs ul-about-2-img">
-                            <div class="img-wrapper">
-                                <img src="assets/img/about-2-img.jpg" alt="Image">
-                            </div>
-
-                            <div class="ul-about-2-stat">
-                                <span class="number">15+</span>
-                                <span class="txt">Years Of Experience</span>
-                            </div>
-                        </div>
+     <section class="ul-about ul-about-2 ul-section-spacing wow animate__fadeInUp">
+    <div class="ul-container">
+        <div class="row row-cols-md-2 row-cols-1 align-items-center gy-4 ul-about-row">
+            <div class="col">
+                <div class="ul-about-imgs ul-about-2-img">
+                    <div class="img-wrapper">
+                        @if(isset($about->image) && $about->image)
+                            <img src="{{ asset('storage/' . $about->image) }}" alt="About Image">
+                        @else
+                            <img src="{{ asset('assets/img/about-2-img.jpg') }}" alt="Default">
+                        @endif
                     </div>
 
-                    <!-- txt -->
-                    <div class="col">
-                        <div class="ul-about-txt">
-                            <span class="ul-section-sub-title ul-section-sub-title--2">About US</span>
-                            <h2 class="ul-section-title">We Believe This Life's About Give For Poor People.</h2>
-                            <p class="ul-section-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                                sit The aspernaturaut odit aut fugit, sed quia consequuntur. Nonprofits around the world
-                                apply and join us to access more funding.</p>
-
-                            <div class="ul-about-bottom ul-about-2-bottom">
-                                <div class="ul-about-2-bottom-block">
-                                    <div class="ul-about-2-bottom-block-icon"><img src="assets/img/mission.svg"
-                                            alt="icon"></div>
-                                    <div class="ul-about-2-bottom-block-txt">
-                                        <h3 class="ul-about-2-bottom-block-title">Our Mission</h3>
-                                        <p class="ul-about-2-bottom-block-descr">The World Apply And Join us to Access
-                                            Funding.</p>
-                                    </div>
-                                </div>
-
-                                <div class="ul-about-2-bottom-block">
-                                    <div class="ul-about-2-bottom-block-icon"><img src="assets/img/vision.svg"
-                                            alt="icon"></div>
-                                    <div class="ul-about-2-bottom-block-txt">
-                                        <h3 class="ul-about-2-bottom-block-title">Our Vision</h3>
-                                        <p class="ul-about-2-bottom-block-descr">The World Apply And Join us to Access
-                                            Funding.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <a href="about.html" class="ul-btn"><i
-                                    class="flaticon-fast-forward-double-right-arrows-symbol"></i> Explore More</a>
-                        </div>
+                    <div class="ul-about-2-stat">
+                        <span class="number">{{ $about->numero ?? '' }}</span>
+                        <span class="txt">Years Of Experience</span>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- ABOUT SECTION END -->
+
+            <div class="col">
+                <div class="ul-about-txt">
+                    <span class="ul-section-sub-title ul-section-sub-title--2">
+                        {{ $about->subtitle ?? '' }}
+                    </span>
+
+                    <h2 class="ul-section-title">
+                        {{ $about->title1 ?? '' }}
+                    </h2>
+
+                    <p class="ul-section-descr">
+                        {{ $about->description ?? '' }}
+                    </p>
+
+                    <div class="ul-about-bottom ul-about-2-bottom">
+                        <div class="ul-about-2-bottom-block">
+                            <div class="ul-about-2-bottom-block-icon">
+                                <img src="{{ asset('assets/img/mission.svg') }}" alt="icon">
+                            </div>
+                            <div class="ul-about-2-bottom-block-txt">
+                                <h3 class="ul-about-2-bottom-block-title">Nuestra Misión</h3>
+                                <p class="ul-about-2-bottom-block-descr">
+                                    {{ $about->mission ?? '' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="ul-about-2-bottom-block">
+                            <div class="ul-about-2-bottom-block-icon">
+                                <img src="{{ asset('assets/img/vision.svg') }}" alt="icon">
+                            </div>
+                            <div class="ul-about-2-bottom-block-txt">
+                                <h3 class="ul-about-2-bottom-block-title">Nuestra Visión</h3>
+                                <p class="ul-about-2-bottom-block-descr">
+                                    {{ $about->vision ?? '' }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="#" class="ul-btn">
+                        <i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Explore More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
         <!-- SERVICES SECTION START -->
@@ -449,7 +461,7 @@
             </div>
         @endforeach
 
-                       
+
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ use App\Http\Controllers\Panel\DashboardController;
 use App\Http\Controllers\Panel\ServicioController;
 use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Panel\AboutController;
 
 
 
@@ -39,5 +40,12 @@ Route::group(['prefix' => 'panel'], function () {
         Route::post('/servicios/store', 'store')->name('servicios.store');
         Route::get('/servicios/{id}/edit', 'edit')->name('servicios.edit');
         Route::delete('/servicios/{id}/destroy', 'destroy')->name('servicios.destroy');
+    });
+    // 4. About (Nosotros) - ¡AGREGADO AQUÍ!
+    Route::controller(AboutController::class)->group(function () {
+        // Muestra el formulario único
+        Route::get('/about', 'index')->name('about.index');
+        // Procesa la actualización (usamos POST porque enviamos archivos/imágenes)
+        Route::post('/about/update', 'update')->name('about.update');
     });
 });

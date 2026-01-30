@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use App\Models\Program; // Importamos el modelo de Programas
 use App\Models\Servicio;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,7 +20,9 @@ class HomeController extends Controller
 
         $servicios = Servicio::orderBy('id', 'desc')->get();
 
+        $about = About::first(); // Trae el registro de "Nosotros"
+
         // Pasamos AMBAS variables a la vista usando compact
-        return view('welcome', compact('banners', 'programs', 'servicios'));
+        return view('welcome', compact('banners', 'programs', 'servicios', 'about'));
     }
 }
