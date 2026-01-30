@@ -31,3 +31,49 @@ INSERT INTO `servicios` VALUES (7, 'Child Medical Research', 'Professional Detai
 INSERT INTO `servicios` VALUES (8, 'Development Programs', 'Professional Detailed Residential Cleaning, Ensuring Spotless Homes And Healthy Living Spaces.', 'servicios/9fNmG3ZeDAN86v49XkUvAMiOb5HM2tInf0IJLlg1.jpg', '2026-01-30 04:09:46', '2026-01-30 04:09:46');
 --------------------------------------------------------------
 --------------------------------------------------------------
+
+--------------------------------------------------------------
+BANNERS
+--------------------------------------------------------------
+CREATE TABLE `banners` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `texto` varchar(255) NOT NULL,
+  `descripcion` text NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `activo` tinyint(1) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `banners`
+--
+
+INSERT INTO `banners` (`id`, `titulo`, `texto`, `descripcion`, `imagen`, `activo`, `created_at`, `updated_at`) VALUES
+(1, 'Empowering Hope Futures Lives Through Giving1', 'Change The World Together1', 'It is a long established fact that a reader will be distracted lorem the readable content of a page when looking at layout the point lorem established fact that It is a long established1', 'banners/PyQgkM2kYFaTijaUd47P1OywqR25Xyqx27rHtEGq.jpg', 1, '2026-01-24 09:58:30', '2026-01-24 10:08:33'),
+(2, 'Empowering Hope Futures Lives Through Giving2', 'Change The World Together2', 'It is a long established fact that a reader will be distracted lorem the readable content of a page when looking at layout the point lorem established fact that It is a long established2', 'banners/l6Ju87GDO5nf49zHIhgZSzGF8gjB6h3YAPEatKqU.jpg', 1, '2026-01-24 09:58:57', '2026-01-24 10:08:40'),
+(3, 'Empowering Hope Futures Lives Through Giving3', 'PRUEBA1233', 'It is a long established fact that a reader will be distracted lorem the readable content of a page when looking at layout the point lorem established fact that It is a long established3', 'banners/s78oLmv5k6qIBiSnRTKqYaKcp6m1IjbUnME1Y0N7.jpg', 1, '2026-01-24 09:59:18', '2026-01-29 10:10:46');
+
+--------------------------------------------------------------
+ABOUT
+--------------------------------------------------------------
+CREATE TABLE `abouts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `subtitle` varchar(255) DEFAULT NULL,
+  `title1` varchar(255) DEFAULT NULL,
+  `numero` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `mission` text DEFAULT NULL,
+  `vision` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `image`, `subtitle`, `title1`, `numero`, `description`, `mission`, `vision`, `created_at`, `updated_at`) VALUES
+(1, 'about/T2DYiPh3YMw59LKhtdS3PA3uV0t41PMljnEvwBkQ.jpg', 'PAOLO MARICON', 'We Believe This Life\'s About Give For Poor People', '14', 'Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur. Nonprofits around the world apply and join us to access more funding.', 'The World Apply And Join us to Access Funding.', 'The World Apply And Join us to Access Funding.', '2026-01-30 10:44:57', '2026-01-30 10:49:01');
