@@ -25,6 +25,14 @@
                         </span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('programs.index') }}" class="waves-effect">
+                        <i class="bx bx-grid-alt"></i>
+                        <span key="t-programs">
+                            Programas
+                        </span>
+                    </a>
+                </li>
 
             </ul>
         </div>

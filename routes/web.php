@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Panel\BannerController;
 use App\Http\Controllers\Panel\DashboardController;
+use App\Http\Controllers\ProgramController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,5 +21,14 @@ Route::group(['prefix' => 'panel'], function () {
         Route::post('/banners/store', 'store')->name('banners.store');
         Route::get('/banners/{id}/edit', 'edit')->name('banners.edit');
         Route::delete('/banners/{id}/destroy', 'destroy')->name('banners.destroy');
+    });
+
+    // 2. NUEVAS Rutas de Programas (CRUD de Educación, Salud, etc.)
+    Route::controller(ProgramController::class)->group(function () {
+        Route::get('/programs', 'index')->name('programs.index');           // Lista
+        Route::post('/programs/store', 'store')->name('programs.store');    // Guardar
+        Route::get('/programs/{id}/edit', 'edit')->name('programs.edit');   // Form editar
+        Route::put('/programs/{id}/update', 'update')->name('programs.update'); // Actualizar (¡No olvides esta!)
+        Route::delete('/programs/{id}/destroy', 'destroy')->name('programs.destroy'); // Eliminar
     });
 });

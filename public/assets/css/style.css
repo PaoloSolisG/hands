@@ -5,7 +5,7 @@ Author: tempticspro
 Version: 1.0
 
 CSS INDEX
-=================== 
+===================
 01. CUSTOM PROPERTIES
 02. GLOBAL
 03. Components
@@ -3502,27 +3502,74 @@ button {
   bottom: clamp(18px, 2.52vw, 48px);
   left: 0;
 }
-
+/* La tarjeta contenedora */
+.ul-feature-card {
+    background-color: #f8f9fa; /* Gris claro de tu imagen */
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Todo a la izquierda */
+    justify-content: center;
+    min-height: 120px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+/* Contenedor principal de la tarjeta */
 .ul-feature {
-  background-color: var(--ul-gray3);
-  border-radius: 10px;
-  padding: clamp(15px, 1.58vw, 30px);
+    background: #f4f7f6; /* Fondo gris claro */
+    padding: 15px 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    min-height: 80px;    /* Altura mínima para uniformidad */
+    width: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
-.ul-feature-icon {
-  margin-bottom: clamp(0px, 0.16vw, 3px);
+
+.ul-feature:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: #ffffff;
+    border-color: #eee;
 }
-.ul-feature-icon svg {
-  width: clamp(30px, 1.89vw, 36px);
+
+/* Estilo y color del icono */
+.ul-feature-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    /* Filtro para el color naranja #EB5310 */
+    filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(359deg) brightness(101%) contrast(105%);
 }
-.ul-feature-icon svg path {
-  fill: var(--ul-primary);
-}
+
+/* Ajuste del título */
 .ul-feature-title {
-  font-size: clamp(20px, 1.26vw, 24px);
-  font-weight: 700;
-  color: var(--ul-black);
-  margin-bottom: 0;
-  font-family: var(--font-quicksand);
+    color: #1a2b3c; /* Color de texto oscuro profesional */
+    line-height: 1.2;
+    margin: 0;
+}
+/* El icono o imagen */
+.ul-feature-icon {
+    margin-bottom: 12px;
+}
+.ul-feature-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    /* Este filtro convierte cualquier imagen oscura en el naranja #EB5310 */
+    filter: invert(44%) sepia(91%) saturate(2853%) hue-rotate(359deg) brightness(101%) contrast(105%);
+}
+/* El texto o título */
+.ul-feature-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-align: left; /* Asegura alineación a la izquierda */
+}
+/* Icono de respaldo (Boxicons) si no hay imagen */
+.ul-feature-icon i {
+    font-size: 32px;
+    color: #EB5310;
 }
 
 .ul-volunteer-block {
