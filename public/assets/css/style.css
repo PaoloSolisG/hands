@@ -49,8 +49,8 @@ CSS INDEX
 :root {
   --black: #000;
   --white: #fff;
-  --ul-primary: #EB5310;
-  --ul-secondary: #FAA019;
+  --ul-primary: #093F54;
+  --ul-secondary: #F9EFC5;
   --ul-c3: #FFE9C8;
   --ul-c4: #FFF9F4;
   --ul-c5: #FC791A;
@@ -1678,7 +1678,7 @@ button {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(101.64deg, rgba(235, 83, 16, 0.9) 1.87%, rgba(235, 83, 16, 0.1) 98.72%);
+  background: linear-gradient(101.64deg, rgb(231, 51, 60) 1.87%, rgba(235, 83, 16, 0.1) 98.72%);
   pointer-events: none;
 }
 .ul-banner-2-slide-bg-img {
@@ -3589,7 +3589,7 @@ button {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 87, 40, 0.9);
+  background: rgb(231, 51, 60);
   z-index: -1;
 }
 .ul-volunteer-block .ul-btn {

@@ -72,8 +72,8 @@
         <div class="ul-header-top">
             <div class="ul-header-top-wrapper ul-header-container">
                 <div class="ul-header-top-left">
-                    <span class="address"><i class="flaticon-pin"></i> Rd. Santa Ana, Illinois 85486, United
-                        States</span>
+                    <span class="address"><i class="flaticon-pin"></i> 249 Central Park Ave. Suite 300-76 Virginia Beach
+                        VA 23462</span>
                 </div>
                 <div class="ul-header-top-right">
                     <div class="ul-header-top-social">
@@ -91,7 +91,7 @@
         <div class="ul-header-bottom to-be-sticky">
             <div class="ul-header-bottom-wrapper ul-header-container">
                 <div class="logo-container">
-                    <a href="index.html" class="d-inline-block"><img src="assets/img/logo.svg" alt="logo"
+                    <a href="index.html" class="d-inline-block"><img src="assets/img/logohands.png" alt="logo"
                             class="logo"></a>
                 </div>
 
@@ -246,30 +246,31 @@
         <!-- BANNER SECTION END -->
 
 
-       <section class="ul-features ul-section-spacing">
-    <div class="ul-container">
-        <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4 justify-content-center">
+        <section class="ul-features ul-section-spacing">
+            <div class="ul-container">
+                <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1 gy-4 justify-content-center">
 
-            @foreach($programs as $program)
-            <div class="col">
-                <div class="ul-feature"> {{-- Esta clase ahora tiene el fondo gris y el flexbox --}}
-                    <div class="ul-feature-icon mb-2">
-                        @if($program->icon)
-                            <img src="{{ asset('storage/' . $program->icon) }}" alt="{{ $program->title }}">
-                        @else
-                            <i class="bx bx-grid-alt" style="font-size: 36px; color: #EB5310;"></i>
-                        @endif
-                    </div>
-                    <h3 class="ul-feature-title" style="font-size: 1.1rem; font-weight: 600;">
-                        {{ $program->title }}
-                    </h3>
+                    @foreach ($programs as $program)
+                        <div class="col">
+                            <div class="ul-feature"> {{-- Esta clase ahora tiene el fondo gris y el flexbox --}}
+                                <div class="ul-feature-icon mb-2">
+                                    @if ($program->icon)
+                                        <img src="{{ asset('storage/' . $program->icon) }}"
+                                            alt="{{ $program->title }}">
+                                    @else
+                                        <i class="bx bx-grid-alt" style="font-size: 36px; color: #EB5310;"></i>
+                                    @endif
+                                </div>
+                                <h3 class="ul-feature-title" style="font-size: 1.1rem; font-weight: 600;">
+                                    {{ $program->title }}
+                                </h3>
+                            </div>
+                        </div>
+                    @endforeach
+
                 </div>
             </div>
-            @endforeach
-
-        </div>
-    </div>
-</section>
+        </section>
         <!-- FEATURES SECTION END -->
 
 
@@ -280,9 +281,9 @@
                 <div class="col">
                     <div class="ul-volunteer-block">
                         <h2 class="ul-volunteer-title">Become A Volunteer</h2>
-                        <p class="ul-volunteer-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit The aspernaturaut odit aut fugit, sed quia consequuntur. Nonprofits around the world
-                            apply</p>
+                        <p class="ul-volunteer-descr">Let’s make a difference in the lives of others. Join our team of
+                            compassionate volunteers and make a tangible difference. Opportunities include event
+                            support, mentorship roles, and administrative assistance.</p>
                         <ul class="ul-volunteer-list">
                             <li>Donate Money</li>
                             <li>Handle With Care</li>
@@ -296,9 +297,13 @@
                 <!-- donate form -->
                 <div class="col">
                     <div class="ul-volunteer-block ul-donate-form-wrapper-2">
-                        <h2 class="ul-volunteer-title">Send a Gift For Children's</h2>
-                        <p class="ul-volunteer-descr">Dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                            sit The aspernaturaut odit aut fugit, sed quia</p>
+                        <h2 class="ul-volunteer-title">Let's donate to needy people for better lives</h2>
+                        <p class="ul-volunteer-descr">Your generosity can change lives. Every donation helps provide
+                            food and medical support to those in need. Many families struggle daily, but with your help,
+                            we can give them hope and a chance for a better future.
+                            No matter the amount, every contribution makes a difference. Join us in making the world a
+                            better place one donation at a time
+                        </p>
                         <form action="index-2.html#" class="ul-donate-form ul-donate-form-2">
                             <div>
                                 <input type="radio" name="donate-amount" id="donate-amount-1" checked hidden>
@@ -346,74 +351,74 @@
         <!-- VOLUNTEER SECTION END -->
 
 
-     <section class="ul-about ul-about-2 ul-section-spacing wow animate__fadeInUp">
-    <div class="ul-container">
-        <div class="row row-cols-md-2 row-cols-1 align-items-center gy-4 ul-about-row">
-            <div class="col">
-                <div class="ul-about-imgs ul-about-2-img">
-                    <div class="img-wrapper">
-                        @if(isset($about->image) && $about->image)
-                            <img src="{{ asset('storage/' . $about->image) }}" alt="About Image">
-                        @else
-                            <img src="{{ asset('assets/img/about-2-img.jpg') }}" alt="Default">
-                        @endif
-                    </div>
-
-                    <div class="ul-about-2-stat">
-                        <span class="number">{{ $about->numero ?? '' }}</span>
-                        <span class="txt">Years Of Experience</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="ul-about-txt">
-                    <span class="ul-section-sub-title ul-section-sub-title--2">
-                        {{ $about->subtitle ?? '' }}
-                    </span>
-
-                    <h2 class="ul-section-title">
-                        {{ $about->title1 ?? '' }}
-                    </h2>
-
-                    <p class="ul-section-descr">
-                        {{ $about->description ?? '' }}
-                    </p>
-
-                    <div class="ul-about-bottom ul-about-2-bottom">
-                        <div class="ul-about-2-bottom-block">
-                            <div class="ul-about-2-bottom-block-icon">
-                                <img src="{{ asset('assets/img/mission.svg') }}" alt="icon">
+        {{--       <section class="ul-about ul-about-2 ul-section-spacing wow animate__fadeInUp">
+            <div class="ul-container">
+                <div class="row row-cols-md-2 row-cols-1 align-items-center gy-4 ul-about-row">
+                    <div class="col">
+                        <div class="ul-about-imgs ul-about-2-img">
+                            <div class="img-wrapper">
+                                @if (isset($about->image) && $about->image)
+                                    <img src="{{ asset('storage/' . $about->image) }}" alt="About Image">
+                                @else
+                                    <img src="{{ asset('assets/img/about-2-img.jpg') }}" alt="Default">
+                                @endif
                             </div>
-                            <div class="ul-about-2-bottom-block-txt">
-                                <h3 class="ul-about-2-bottom-block-title">Nuestra Misión</h3>
-                                <p class="ul-about-2-bottom-block-descr">
-                                    {{ $about->mission ?? '' }}
-                                </p>
-                            </div>
-                        </div>
 
-                        <div class="ul-about-2-bottom-block">
-                            <div class="ul-about-2-bottom-block-icon">
-                                <img src="{{ asset('assets/img/vision.svg') }}" alt="icon">
-                            </div>
-                            <div class="ul-about-2-bottom-block-txt">
-                                <h3 class="ul-about-2-bottom-block-title">Nuestra Visión</h3>
-                                <p class="ul-about-2-bottom-block-descr">
-                                    {{ $about->vision ?? '' }}
-                                </p>
+                            <div class="ul-about-2-stat">
+                                <span class="number">{{ $about->numero ?? '' }}</span>
+                                <span class="txt">Years Of Experience</span>
                             </div>
                         </div>
                     </div>
 
-                    <a href="#" class="ul-btn">
-                        <i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Explore More
-                    </a>
+                    <div class="col">
+                        <div class="ul-about-txt">
+                            <span class="ul-section-sub-title ul-section-sub-title--2">
+                                {{ $about->subtitle ?? '' }}
+                            </span>
+
+                            <h2 class="ul-section-title">
+                                {{ $about->title1 ?? '' }}
+                            </h2>
+
+                            <p class="ul-section-descr">
+                                {{ $about->description ?? '' }}
+                            </p>
+
+                            <div class="ul-about-bottom ul-about-2-bottom">
+                                <div class="ul-about-2-bottom-block">
+                                    <div class="ul-about-2-bottom-block-icon">
+                                        <img src="{{ asset('assets/img/mission.svg') }}" alt="icon">
+                                    </div>
+                                    <div class="ul-about-2-bottom-block-txt">
+                                        <h3 class="ul-about-2-bottom-block-title">Nuestra Misión</h3>
+                                        <p class="ul-about-2-bottom-block-descr">
+                                            {{ $about->mission ?? '' }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="ul-about-2-bottom-block">
+                                    <div class="ul-about-2-bottom-block-icon">
+                                        <img src="{{ asset('assets/img/vision.svg') }}" alt="icon">
+                                    </div>
+                                    <div class="ul-about-2-bottom-block-txt">
+                                        <h3 class="ul-about-2-bottom-block-title">Nuestra Visión</h3>
+                                        <p class="ul-about-2-bottom-block-descr">
+                                            {{ $about->vision ?? '' }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#" class="ul-btn">
+                                <i class="flaticon-fast-forward-double-right-arrows-symbol"></i> Explore More
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section> --}}
 
 
         <!-- SERVICES SECTION START -->
@@ -434,32 +439,33 @@
                 <div class="ul-services-slider swiper overflow-visible">
                     <div class="swiper-wrapper">
                         <!-- single slide -->
-                     @foreach($servicios as $servicio)
-            <div class="swiper-slide">
-                <div class="ul-service">
-                    <div class="ul-service-img">
-                        @if($servicio->imagen)
-                            {{-- Usamos storage para traer la imagen dinámica --}}
-                            <img src="{{ asset('storage/' . $servicio->imagen) }}" alt="{{ $servicio->titulo }}">
-                        @else
-                            {{-- Imagen por defecto por si no subes una --}}
-                            <img src="{{ asset('assets/img/service-1.jpg') }}" alt="Default Image">
-                        @endif
-                    </div>
-                    <div class="ul-service-txt">
-                        <h3 class="ul-service-title">
-                            <a href="#">{{ $servicio->titulo }}</a>
-                        </h3>
-                        <p class="ul-service-descr">
-                            {{ $servicio->descripcion }}
-                        </p>
-                        <a href="#" class="ul-service-btn">
-                            <i class="flaticon-up-right-arrow"></i> Ver Detalles
-                        </a>
-                    </div>
-                </div>
-            </div>
-        @endforeach
+                        @foreach ($servicios as $servicio)
+                            <div class="swiper-slide">
+                                <div class="ul-service">
+                                    <div class="ul-service-img">
+                                        @if ($servicio->imagen)
+                                            {{-- Usamos storage para traer la imagen dinámica --}}
+                                            <img src="{{ asset('storage/' . $servicio->imagen) }}"
+                                                alt="{{ $servicio->titulo }}">
+                                        @else
+                                            {{-- Imagen por defecto por si no subes una --}}
+                                            <img src="{{ asset('assets/img/service-1.jpg') }}" alt="Default Image">
+                                        @endif
+                                    </div>
+                                    <div class="ul-service-txt">
+                                        <h3 class="ul-service-title">
+                                            <a href="#">{{ $servicio->titulo }}</a>
+                                        </h3>
+                                        <p class="ul-service-descr">
+                                            {{ $servicio->descripcion }}
+                                        </p>
+                                        <a href="#" class="ul-service-btn">
+                                            <i class="flaticon-up-right-arrow"></i> Ver Detalles
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
 
                     </div>
@@ -557,9 +563,9 @@
         <section class="ul-cta">
             <div class="ul-container">
                 <span class="ul-section-sub-title">Start Donating Poor People</span>
-                <h2 class="ul-cta-title">Children Need Your Help By Donating Today</h2>
+                <h2 class="ul-cta-title">We’re here to help and build a better future for our families. </h2>
                 <a href="index-2.html#" class="ul-btn"><i
-                        class="flaticon-fast-forward-double-right-arrows-symbol"></i> Get A Quote</a>
+                        class="flaticon-fast-forward-double-right-arrows-symbol"></i> Be an Impact Ambassador</a>
             </div>
             <img src="assets/img/cta-vector.svg" alt="Vector" class="ul-cta-vector">
         </section>
@@ -665,7 +671,7 @@
 
 
         <!-- CONTACT SECTION START -->
-        <section class="ul-contact">
+        {{--  <section class="ul-contact">
             <div class="ul-container">
                 <div class="row g-0">
                     <div class="col-lg-5">
@@ -722,7 +728,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
         <!-- CONTACT SECTION END -->
 
 
@@ -732,11 +738,10 @@
                 <div class="ul-section-heading">
                     <div class="left">
                         <span class="ul-section-sub-title"> Latest Blog </span>
-                        <h2 class="ul-section-title">Read Our Latest News</h2>
+                        <h2 class="ul-section-title">Our Impact Ambassadors – Collaborating for a better future</h2>
                     </div>
 
-                    <a href="blog.html" class="ul-btn"><i
-                            class="flaticon-fast-forward-double-right-arrows-symbol"></i> All Blogs</a>
+
                 </div>
 
                 <div class="row row-cols-md-3 row-cols-2 row-cols-xxs-1 ul-bs-row justify-content-center">
